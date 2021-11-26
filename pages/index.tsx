@@ -2,6 +2,14 @@ import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Link from "next/link";
 
+const buttonVariants = {
+  hover: {
+    scale: [1, 1.1, 1, 1.1, 1, 1.1, 1],
+    textShadow: "0 0 8px rgb(255, 255, 255)",
+    boxShadow: "0 0 8px rgb(255, 255, 255)"
+  }
+};
+
 const Home: NextPage = () => {
   return (
     <motion.div
@@ -12,11 +20,9 @@ const Home: NextPage = () => {
       <h2>Welcome to Pizza Joint</h2>
       <Link href="/base" passHref>
         <motion.button
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0 0 8px rgb(255, 255, 255)",
-            boxShadow: "0 0 8px rgb(255, 255, 255)"
-          }}>
+          variants={buttonVariants}
+          whileHover="hover"
+          animate="visible">
           Create Your Pizza
         </motion.button>
       </Link>
