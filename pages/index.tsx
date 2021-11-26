@@ -1,14 +1,18 @@
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <div className="home container">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="home container">
       <h2>Welcome to Pizza Joint</h2>
       <Link href="/base" passHref>
         <button>Create Your Pizza</button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

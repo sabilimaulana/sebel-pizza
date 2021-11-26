@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/globalContext";
@@ -27,11 +28,14 @@ const Base: NextPage = () => {
       </ul>
 
       {pizza.base && (
-        <div className="next">
+        <motion.div
+          initial={{ x: "-100vw" }}
+          animate={{ x: 0 }}
+          className="next">
           <Link href="/toppings" passHref>
             <button>Next</button>
           </Link>
-        </div>
+        </motion.div>
       )}
     </div>
   );

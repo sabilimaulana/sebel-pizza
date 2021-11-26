@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { NextComponentType } from "next";
 
 const Header: NextComponentType = () => {
@@ -16,7 +17,9 @@ const Header: NextComponentType = () => {
         </svg>
       </div>
       <div className="title">
-        <h1>Sebel Pizza</h1>
+        <motion.h1 initial={{ y: -250 }} animate={{ y: -10 }}>
+          Sebel Pizza
+        </motion.h1>
       </div>
     </header>
   );
