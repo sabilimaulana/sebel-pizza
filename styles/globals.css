@@ -82,6 +82,9 @@ header .pizza-svg {
   stroke-linejoin: round;
   stroke-linecap: round;
 }
+header .logo {
+  cursor: pointer;
+}
 
 /* lists */
 li span.active {
