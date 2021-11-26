@@ -1,12 +1,12 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { NextComponentType } from "next";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../contexts/globalContext";
 
 const containerVariants = {
   hidden: {
     opacity: 0,
-    x: "100vw"
+    x: "-100vw"
   },
   visible: {
     opacity: 1,
@@ -18,6 +18,10 @@ const containerVariants = {
       when: "beforeChildren",
       staggerChildren: 0.4
     }
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" }
   }
 };
 
@@ -31,27 +35,16 @@ const childVariants = {
 };
 
 const Order: NextComponentType = () => {
-  const [showTitle, setShowTitle] = useState<boolean>(true);
   const [pizza] = useContext(GlobalContext);
-
-  setTimeout(() => {
-    setShowTitle(false);
-  }, 3000);
 
   return (
     <motion.div
       className="container order"
       variants={containerVariants}
       initial="hidden"
-      animate="visible">
-      <AnimatePresence>
-        {showTitle && (
-          <motion.h2 exit={{ opacity: 0 }}>
-            Thank you for your order :)
-          </motion.h2>
-        )}
-      </AnimatePresence>
-
+      animate="visible"
+      exit="exit">
+      <h2>Thank you for your order :)</h2>
       <motion.p variants={childVariants}>
         You ordered a {pizza.base} pizza with:
       </motion.p>
