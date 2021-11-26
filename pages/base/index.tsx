@@ -4,6 +4,23 @@ import Link from "next/link";
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/globalContext";
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: "100vw"
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", delay: 0.5 }
+  }
+};
+
+const nextVariants = {
+  hidden: { x: "-100vw" },
+  visible: { x: 0, transition: { type: "spring", stiffness: 120 } }
+};
+
 const Base: NextPage = () => {
   const [pizza, setPizza] = useContext(GlobalContext);
 
@@ -16,9 +33,9 @@ const Base: NextPage = () => {
   return (
     <motion.div
       className="base container"
-      initial={{ x: "100vw" }}
-      animate={{ x: 0 }}
-      transition={{ type: "spring", delay: 0.5 }}>
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible">
       <h3>Step 1: Choose Your Base</h3>
       <ul>
         {bases.map((base) => {
@@ -36,11 +53,7 @@ const Base: NextPage = () => {
       </ul>
 
       {pizza.base && (
-        <motion.div
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{ type: "spring", stiffness: 120 }}
-          className="next">
+        <motion.div variants={nextVariants} className="next">
           <Link href="/toppings" passHref>
             <motion.button
               whileHover={{
