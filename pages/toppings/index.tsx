@@ -16,6 +16,15 @@ const containerVariants = {
   }
 };
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0 0 8px rgb(255, 255, 255)",
+    boxShadow: "0 0 8px rgb(255, 255, 255)",
+    transition: { yoyo: Infinity, duration: 0.3 }
+  }
+};
+
 const Toppings: NextPage = () => {
   const toppings: string[] = [
     "mushrooms",
@@ -61,12 +70,7 @@ const Toppings: NextPage = () => {
       </ul>
 
       <Link href="/order" passHref>
-        <motion.button
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0 0 8px rgb(255, 255, 255)",
-            boxShadow: "0 0 8px rgb(255, 255, 255)"
-          }}>
+        <motion.button variants={buttonVariants} whileHover="hover">
           Order
         </motion.button>
       </Link>

@@ -21,6 +21,15 @@ const nextVariants = {
   visible: { x: 0, transition: { type: "spring", stiffness: 120 } }
 };
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0 0 8px rgb(255, 255, 255)",
+    boxShadow: "0 0 8px rgb(255, 255, 255)",
+    transition: { yoyo: Infinity, duration: 0.3 }
+  }
+};
+
 const Base: NextPage = () => {
   const [pizza, setPizza] = useContext(GlobalContext);
 
@@ -55,12 +64,7 @@ const Base: NextPage = () => {
       {pizza.base && (
         <motion.div variants={nextVariants} className="next">
           <Link href="/toppings" passHref>
-            <motion.button
-              whileHover={{
-                scale: 1.1,
-                textShadow: "0 0 8px rgb(255, 255, 255)",
-                boxShadow: "0 0 8px rgb(255, 255, 255)"
-              }}>
+            <motion.button variants={buttonVariants} whileHover="hover">
               Next
             </motion.button>
           </Link>
