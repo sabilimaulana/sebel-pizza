@@ -33,6 +33,11 @@ body {
     rgba(62, 20, 86, 1) 100%
   );
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+html {
+  overflow: hidden;
 }
 button {
   color: white;

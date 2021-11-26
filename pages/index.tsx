@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       initial="hidden"
       animate="visible"
       exit="exit">
-      <h2>Welcome to Pizza Joint</h2>
+      <h2>Welcome to Sebel Pizza</h2>
       <Link href="/base" passHref>
         <motion.button
           variants={buttonVariants}
