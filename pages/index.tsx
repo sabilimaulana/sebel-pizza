@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Link from "next/link";
+import Loader from "../components/Loader";
 
 const buttonVariants = {
   hover: {
@@ -37,6 +38,7 @@ const Home: NextPage = () => {
           Create Your Pizza
         </motion.button>
       </Link>
+      <Loader />
     </motion.div>
   );
 };

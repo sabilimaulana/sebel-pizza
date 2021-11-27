@@ -36,7 +36,7 @@ const Modal: NextComponentType = () => {
           animate="visible"
           exit="hidden">
           <motion.div className="modal" variants={modalVariants}>
-            <p>Want to make another pizza</p>
+            <p>Want to make another pizza?</p>
             <Link href="/" passHref>
               <motion.button variants={buttonVariants} whileHover="hover">
                 Start again
