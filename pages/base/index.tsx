@@ -35,7 +35,7 @@ const buttonVariants = {
 };
 
 const Base: NextPage = () => {
-  const [pizza, setPizza] = useContext(GlobalContext);
+  const { pizza, setPizza } = useContext(GlobalContext);
 
   const addBase = (base: string) => {
     setPizza({ ...pizza, base });

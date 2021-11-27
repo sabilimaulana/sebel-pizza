@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { NextComponentType } from "next";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GlobalContext } from "../../contexts/globalContext";
 
 const containerVariants = {
@@ -35,7 +35,13 @@ const childVariants = {
 };
 
 const Order: NextComponentType = () => {
-  const [pizza] = useContext(GlobalContext);
+  const { pizza } = useContext(GlobalContext);
+  const { setShowModal } = useContext(GlobalContext);
+
+  // useEffect lifecycle hook, array with only setShowModal as dep
+  useEffect(() => {
+    setTimeout(() => setShowModal(true), 5000);
+  }, [setShowModal]);
 
   return (
     <motion.div

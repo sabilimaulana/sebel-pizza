@@ -39,7 +39,7 @@ const Toppings: NextPage = () => {
     "tomatoes"
   ];
 
-  const [pizza, setPizza] = useContext(GlobalContext);
+  const { pizza, setPizza } = useContext(GlobalContext);
 
   const addTopping = (topping: string) => {
     let newToppings: string[] = [];
