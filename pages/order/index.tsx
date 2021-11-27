@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { NextComponentType } from "next";
 import { useContext, useEffect } from "react";
-import { GlobalContext } from "../../contexts/globalContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 const containerVariants = {
   hidden: {

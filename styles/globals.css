@@ -52,7 +52,7 @@ button {
 }
 .container {
   max-width: 300px;
-  margin: 100px auto 40px;
+  margin: 20vh auto 40px;
 }
 .container h3 {
   padding-bottom: 10px;
@@ -69,6 +69,7 @@ header {
   display: flex;
   padding: 40px;
   align-items: center;
+  max-height: 164px;
 }
 header .title {
   flex-grow: 1;
@@ -134,4 +135,31 @@ li span.active::before {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+.modal {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal button {
+  color: #444;
+  border-color: #444;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.modal p {
+  color: #444;
+  font-weight: bold;
+}
+
+/* Not Found  */
+.not-found {
+  height: calc(100vh - 164px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
 }

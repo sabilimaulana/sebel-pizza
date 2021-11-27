@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Link from "next/link";
 import { useContext } from "react";
-import { GlobalContext } from "../../contexts/globalContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 const containerVariants = {
   hidden: {
